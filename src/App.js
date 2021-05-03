@@ -7,12 +7,11 @@ import {
 
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-// import {  } from './components';
+import { SimpleCard } from './components';
 
 //USAGE MATERIAL-UI STYLES IN CLASS COMPONENT
 const useStyles = myStyles => ({
-  card: {
-    background: 'linear-gradient(55deg, hsla(212, 35%, 58%, 1) 0%, hsla(218, 32%, 80%, 1) 100%)',
+  someComponent: {
 
   },
 });
@@ -49,15 +48,7 @@ class App extends React.Component {
         <Container>
           <Grid container justify="center">
             <Grid item xs={12} sm={6}>
-              <Card className={classes.card}>
-                <CardHeader title="Some header text goes here" />
-                <CardContent>
-                  <Typography variant="body2" color="textSecondary">
-                  This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                  </Typography>
-                </CardContent>
-              </Card>
+              <SimpleCard />
             </Grid>
           </Grid>
         </Container>
