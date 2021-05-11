@@ -34,12 +34,24 @@ const theme = createMuiTheme({
 class App extends React.Component {
 
   //DEFINE states to be used in the App
-  // state = {}
+  state = {
+    counter: 0,
+  }
+
+  componentDidMount = () => {
+    setInterval (() => {
+      this.setState({
+        counter: this.state.counter + 1,
+      })
+    }, 10000)
+  }
 
   render() {
 
     //USAGE MATERIAL-UI STYLES IN CLASS COMPONENT
     const { classes } = this.props;
+
+    const { counter } = this.state;
 
     return (
       <MuiThemeProvider theme={theme}>
@@ -51,6 +63,12 @@ class App extends React.Component {
               <SimpleCard />
             </Grid>
           </Grid>
+        </Container>
+
+        <Container>
+          <Typography gutterBottom variant="caption" align="center" color="primary">
+            counter: {counter}
+          </Typography>
         </Container>
 
       </MuiThemeProvider>
